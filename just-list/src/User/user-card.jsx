@@ -1,13 +1,10 @@
 import React from 'react';
-import {
-    Card, CardImg, CardText, CardBody, CardLink,
-    CardTitle, CardSubtitle, Button
-} from 'reactstrap';
+import {Card,CardTitle} from 'reactstrap';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
-export default class User extends React.Component {
+export default class UserCard extends React.Component {
 
     constructor(props) {
         super(props);
@@ -18,20 +15,17 @@ export default class User extends React.Component {
         let userDetails = this.props.userDetails;
         return (
             <div>
-                <h1></h1>
-                <div class="col-lg-4">
                     <Card body>
-                        <div class="row">
-                            <div class="col-xs-12 col-md-8 justify-content-center">
+                        <div className="row">
+                            <div className="col-xs-12 col-md-8 ">
                                 <CardTitle>{userDetails.name}</CardTitle>
-                                <CardText>{userDetails.id} <FontAwesomeIcon icon="spinner" /></CardText>
+                                {/* <CardText>{userDetails.id} <FontAwesomeIcon icon="user" /></CardText> */}
                             </div>
-                            <div class="col-xs-12 col-md-4 ">
-                                <FontAwesomeIcon icon="plus" size="lg"/>
+                            <div className="col-xs-12 col-md-4 ">
+                                <FontAwesomeIcon icon="user" size="lg"/>
                             </div>
                         </div>
                     </Card>
-                </div>
             </div>
         )
     }

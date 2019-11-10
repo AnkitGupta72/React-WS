@@ -1,0 +1,34 @@
+.myWriting{
+    font-family: monospace;
+    animation: 1.5s ease-out 0s 1 slideInFromLeft;
+}
+
+.myWriting2{
+    opacity: 0;
+    animation: fadein 2s ease-in 0s forwards;
+}
+
+.myCard{
+    margin: 0rem 2rem 0rem 2rem;
+}
+
+.myCards{
+    opacity: 0;
+    animation: fadein 1.5s ease-in 0s forwards;
+}
+
+@keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-25%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  
+@keyframes fadein {
+    to {
+        opacity:1;
+    }
+  }
