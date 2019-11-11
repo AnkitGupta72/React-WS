@@ -166,7 +166,7 @@ export default class UserDrop extends React.Component {
                         {state.addUserForm && (
                             <div className="row text-center" style={{ display: "inline" }}>
                                 <div style={{ display: "inline" }}>
-                                    <input autoFocus type="text" name="userName" onChange={this.handleChange} vaaule={this.state.userName} />
+                                    <input autoFocus type="text" name="userName" onChange={this.handleChange} value={this.state.userName} />
                                 </div>
                                 <div style={{ display: "inline", 'paddingLeft': '2%' }}>
                                     <span onClick={this.addUser}><FontAwesomeIcon icon="plus" size="lg" /></span>

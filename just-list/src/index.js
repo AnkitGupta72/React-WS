@@ -5,12 +5,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faCheckSquare, faCoffee,faPlus,faUser,faShoppingCart, faSuitcaseRolling, faTasks } from '@fortawesome/free-solid-svg-icons'
+import { faCheckSquare, faCoffee,faPlus,faUser,faShoppingCart, faSuitcaseRolling, faTasks,faCheck } from '@fortawesome/free-solid-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 
 import App from "./App.jsx"
 
-library.add(fab,faCheckSquare, faCoffee, faPlus, faUser, faShoppingCart, faSuitcaseRolling, faTasks)
+library.add(fab,faCheckSquare, faCoffee, faPlus, faUser, faShoppingCart, faSuitcaseRolling, faTasks,faCheck)
 
 
 

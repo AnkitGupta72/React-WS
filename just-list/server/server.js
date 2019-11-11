@@ -42,6 +42,11 @@ app.get("/tasks",(req,res)=>{
     return res.send(data)
 })
 
+app.post("/tasks",(req,res)=>{
+    addTasks(req.body.tasks)
+    return res.send("Task added.")
+})
+
 app.listen(port,()=>{
     console.log("Server started at port :"+port);
 });
@@ -67,4 +72,9 @@ getTasks = () => {
     let tasks_raw = fs.readFileSync('data.json');
     let tasks = JSON.parse(tasks_raw);
     return tasks; 
+}
+
+addTasks = (data) => {
+    fs.writeFileSync('data.json', JSON.stringify(data));
+    return;
 }
