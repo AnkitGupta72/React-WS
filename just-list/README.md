@@ -1,34 +1,49 @@
-# React-WS
-
-React application for the workshop
-
 # JustList
 
-A React Web App to create following lists:  
+A TypeScript React + Express app for personal lists: to-do, travel, and shopping.
 
-### To-Do list :
+## Requirements
 
-A list of to-do, mark it as done, edit and delete it.
+- Node.js **20.19+** or **22.12+** (Vite 7)
+- npm 10+
 
-  
+## Setup
 
-### Travel List :
+```bash
+cd just-list
+nvm use
+npm install
+npm run dev
+```
 
-All the places you visited or want to visit.`Just List it.`
+This starts:
 
-  
+- **Client** (Vite): http://localhost:5173
+- **API** (Express): http://localhost:8080
 
-### Shopping List :
+The Vite dev server proxies `/api` to the Express API.
 
-Save your items list to buy so you don't forget to get them the next time you go to shop.
+## Scripts
 
-# Why?
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Run client and server in watch mode |
+| `npm run build` | Build client (`client/dist`) and server (`server/dist`) |
+| `npm start` | Run the compiled server (serves `client/dist` when present) |
 
-* With our busy schedule and so many tasks piling on, its easy to just forget about some things. So this app will aim to allow us to see what all tasks are remaining.
-* Write about every place you ever wanted to visit and every place you already did. This will help you motivate to travel and explore more.
-* Wanted to travel to a new city, have a lot of places to go but finding it hard to keep track.`JustList` is to the rescue.
-* Ever happened like you went to the Store and forgot what you have to buy. Never again with `JustList`. 
+## API
 
-# How?
+| Method | Path | Description |
+|--------|------|-------------|
+| `GET` | `/api/health` | Health check |
+| `GET` | `/api/users` | List users |
+| `POST` | `/api/users` | Create user `{ "name": "..." }` |
+| `GET` | `/api/lists/:kind?userId=` | Get list (`todo` \| `travel` \| `shopping`) |
+| `PUT` | `/api/lists/:kind` | Save list `{ "userId", "bucket": { "active", "completed" } }` |
 
-You create a user, add in the respective lists what you have to do, mark them complete when you are done and edit or remove them as and when you want. LETS MAKE LIFE A BIT SIMPLER :)
+Data files live under `server/data/`.
+
+## Security
+
+- Express uses `helmet`, restricted CORS, JSON body size limits, and Zod validation.
+- Static deploy hosts can use `client/public/_headers` for CSP and related headers.
